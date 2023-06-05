@@ -33,7 +33,7 @@ FimEscolha
 ## Exercícios práticos
 **1) Aprimorando o algoritmo de viagem para a Disney**
 ```
-Algotirmo("Prática1")
+Algotirmo "Prática1"
 
 var
   dinheiro: Real
@@ -57,36 +57,34 @@ fimalgoritmo
 
 **2) Aluna aprovada, reprovada ou em recuperação**
 ```
-Algotirmo("Prática2")
+Algotirmo "Prática2"
 
 var
- n1, n2, media: Real  
+ n1, n2, media: Real
 
 inicio
   Escreval("Digite a primeira nota da estudante:")
   Leia(n1)
   Escreval("Digite a segunda nota da estudante:")
   Leia(n2)
-  
-  media <- (n1 + n2) / 2
-  
- Escreva("----------------")
- Escreva("MEDIA:", media:4:2)
- 
- Se(media >= 7) entao
-  Escreva("ALUNA APROVADA")
- senao
-  Se(media >= 5) e (media < 7)
-    Escreva("ALUNA EM RECUPERAÇÃO")
-  senao
-    Escreva("ALUNA REPROVADA")
-  FimSe
- FimSe 
- 
- Escreva("----------------")
- 
-fimalgoritmo
 
+  media <- (n1 + n2) / 2
+
+ Escreval("----------------")
+ Escreval("MEDIA:", media:4:2)
+
+ Se(media >= 7) entao
+  Escreval("ALUNA APROVADA")
+ senao
+  Se(media >= 5) e (media < 7) entao
+    Escreval("ALUNA EM RECUPERAÇÃO")
+  senao
+    Escreval("ALUNA REPROVADA")
+  FimSe
+ FimSe
+
+ Escreva("----------------")
+fimalgoritmo
 ```
 
 **3) Utilizando o Caso para um programa de doação**
@@ -100,36 +98,36 @@ var
   Valor_doacao: Real
 
 inicio
-Escreval("----------------")
-Escreval("CRIANÇA ESPERANÇA")
-Escreval("----------------")
-Escreval("Muito obrigada por ajudar!")
-Escreval("Digite 1 para doar R$10 ")
-Escreval("Digite 2 para doar R$25 ")
-Escreval("Digite 3 para doar R$50 ")
-Escreval("Digite 4 para doar outros valores ")
-Escreval("Digite 5 para cancelar ")
+  Escreval("----------------")
+  Escreval("CRIANÇA ESPERANÇA")
+  Escreval("----------------")
+  Escreval("Muito obrigada por ajudar!")
+  Escreval("Digite 1 para doar R$10 ")
+  Escreval("Digite 2 para doar R$25 ")
+  Escreval("Digite 3 para doar R$50 ")
+  Escreval("Digite 4 para doar outros valores ")
+  Escreval("Digite 5 para cancelar ")
 
-Leia(num_selecionado)
-Escolha(num_selecionado)
+  Leia(num_selecionado)
+  Escolha(num_selecionado)
 
-Caso 1
-  Valor_doacao <- 10
-Caso 2
-  Valor_doacao <- 25
-Caso 3
-  Valor_doacao <- 50
-Caso 4
-  Escreva("Qual o valor da doação?")
-  Leia(Valor_doacao)
-Caso 5
-  Valor_doacao <- 0
-FimEscolha
+  Caso 1
+    Valor_doacao <- 10
+  Caso 2
+    Valor_doacao <- 25
+  Caso 3
+    Valor_doacao <- 50
+  Caso 4
+    Escreva("Qual o valor da doação? ")
+    Leia(Valor_doacao)
+  Caso 5
+    Valor_doacao <- 0
+  FimEscolha
 
-Escreval("----------------")
-Escreval("O valor de sua doação foi", Valor_doacao)
-Escreval("Obrigada!")
-Escreval("----------------")
+  Escreval("----------------")
+  Escreval("O valor de sua doação foi", Valor_doacao)
+  Escreval("Obrigada!")
+  Escreval("----------------")
 
 fimalgoritmo
 ```
@@ -148,25 +146,25 @@ salario, Novo_salario: Real
 dependentes: Inteiro
 
 inicio
-  Escreva("Qual o nome do funcionário?")
+ Escreval("Qual o nome do funcionário? ")
   Leia(nome)
-  Escreva("Qual o valor do salário? R$")
+  Escreval("Qual o valor do salário? R$")
   Leia(salario)
-  Escreva("Qual a quantidade de dependentes?")
+  Escreval("Qual a quantidade de dependentes? ")
   Leia(dependentes)
-  
+
   Escolha(dependentes)
     Caso 0
       Novo_salario <- salario + (salario*5/100)
     Caso 1, 2, 3
       Novo_salario <- salario + (salario*10/100)
     Caso 4, 5, 6
-      Novo_salario <- salario + (salario*15/100)      
+      Novo_salario <- salario + (salario*15/100)
     OutroCaso
       Novo_salario <- salario + (salario*18/100)
-    FimEsolha
-   
-   Escreval("O novo salário de", nome " é igual a R$", Novo_salario:5:2)
+    FimEscolha
+
+   Escreval("O novo salário de ", nome, " é igual a R$", Novo_salario:5:2)
 fimalgoritmo
 ```
 
@@ -179,33 +177,42 @@ var
   aproveitamento: Caractere
 
 inicio
-  Escreva("----------------")
-  Escreva("Digite a primeira nota da aluna")
+   Escreval("----------------")
+  Escreval("Digite a primeira nota da aluna ")
   Leia(nota1)
-  Escreva("Digite a segunda nota da aluna")
+  Escreval("Digite a segunda nota da aluna ")
   Leia(nota2)
-  Escreva("----------------")
-  
+  Escreval("----------------")
+
   media <- (nota1 + nota2) / 2
 
- Escolha(media)
-    Caso 1000 - 900
-        aproveitamento <- A
-    Caso 890 - 800
-        aproveitamento <- B
-    Caso 790 - 700
-        aproveitamento <- C
-    Caso 690 - 600
-        aproveitamento <- D 
-    Caso 590 - 500
-        aproveitamento <- E
-    Caso 0 - 500
-        aproveitamento <- F
-  FimEscolha
+  Se(media >= 9) e (media <= 10) entao
+     aproveitamento <- "A"
+  senao
+    Se(media >= 8)e (media <= 8.9) entao
+     aproveitamento <- "B"
+    senao
+     Se(media >= 7) e (media <= 7.9) entao
+      aproveitamento <- "C"
+     senao
+       Se(media >= 6) e (media <= 6.9) entao
+        aproveitamento <- "D"
+       senao
+        Se(media >= 5) e (media <= 5.9) entao
+         aproveitamento <- "E"
+        senao
+         Se(media >= 0) e (media < 5) entao
+          aproveitamento <- "F"
+         FimSe
+        FimSe
+       FimSe
+      FimSe
+     FimSe
+    FimSe
 
-  Escreva("Média: ", media)
-  Escreva("Aproveitamento: ", aproveitamento)
-  Escreva("----------------")
+  Escreval("Média: ", media)
+  Escreval("Aproveitamento: ", aproveitamento)
+  Escreval("----------------")
 
 fimalgoritmo
 ```
@@ -215,20 +222,20 @@ fimalgoritmo
 Algoritmo("Prática6")
 
 var
-  bangu, madu: inteiros
+  bangu, madu: inteiro
   diferenca: Real
  
 inicio
-  Escreva("----------------")
-  Escreva("Quantos gols do BANGU?")
+  Escreval("----------------")
+  Escreval("Quantos gols do BANGU?")
   Leia(bangu)
-  Escreva("Quantos gols do MADUREIRA?")
+  Escreval("Quantos gols do MADUREIRA?")
   Leia(madu)
 
   diferenca <- bangu - madu
-  
+
   //utilizando se
-  
+
   Se(diferenca = 0) entao
    Escreval("----------------")
    Escreval("DIFERENÇA: ", diferenca)
@@ -237,14 +244,14 @@ inicio
   senao
     Se(diferenca > 0) e (diferenca < 5) entao
        Escreval("----------------")
-       Escreval("DIFERENÇA: ", diferenca)
+       Escreval("DIFERENÇA: ",ABS(diferenca))
        Escreval("STATUS: Partida normal")
        Escreval("----------------")
     senao
        Escreval("----------------")
        Escreval("DIFERENÇA: ", diferenca)
        Escreval("STATUS: GOLEADA")
-       Escreva("----------------")
+       Escreval("----------------")
     FimSe
   FimSe
 
@@ -257,17 +264,18 @@ Caso 0
     Escreval("STATUS: EMPATE")
     Escreval("----------------")
 
-Caso 1, 2, 3, 4    
+Caso 1, 2, 3, 4
     Escreval("----------------")
     Escreval("DIFERENÇA: ", diferenca)
     Escreval("STATUS: Partida normal")
     Escreval("----------------")
-    
-OutrosCasos
+
+OutroCaso
     Escreval("----------------")
     Escreval("DIFERENÇA: ", diferenca)
     Escreval("STATUS: GOLEADA")
-    Escreva("----------------")
+    Escreval("----------------")
+ FimEscolha
 
 fimalgoritmo
 ```
