@@ -52,7 +52,7 @@ var
   
 inicio
 
-  Escreva("Até quantos quer contar?")
+  Escreva("Até quantos quer contar? ")
   Leia(num)
   contador <- 0
   
@@ -74,9 +74,9 @@ var
   
 inicio
 
-  Escreva("Até quantos quer contar?")
+  Escreval("Até quantos quer contar? ")
   Leia(num)
-  Escreva("Quer pular de quantos em quantos?")
+  Escreval("Quer pular de quantos em quantos? ")
   Leia(salto)
   
   contador <- 0
@@ -98,7 +98,7 @@ var
   contador, soma, num: Inteiro
 inicio
   
-  contador <- 0
+  contador <- 1
   soma <- 0
   
   Enquanto (contador <= 5) faca
@@ -126,7 +126,7 @@ var
   
 inicio
   
-  contador <- 0
+  contador <- 1
   soma <- 0
   
   Enquanto (contador <= 5) faca
@@ -156,29 +156,34 @@ var
   
 inicio
   
-  contador <- 0
+  contador <- 1
   soma <- 0
-  
+  maior <- 0
+
   Enquanto (contador <= 5) faca
     Escreval("Digite o ", contador, ". número")
     Leia(num)
-    
+
     //irá guardar os valores em "maior", e comparar se o próximo a ser digitado é superior ao valor que já está guardado
     Se(num > maior) entao
-      maior <- num
-    FimSe
-    
-    Se(num = 0) ou (num < menor) entao
-      menor <- num
-    FimSe  
-    
+     maior <- num
+     FimSe
+     
+    Se(menor = 0) entao
+       menor <- num
+     senao
+       Se(num < menor) entao
+        menor <- num
+     FimSe
+     FimSe
+
     soma <- soma + num
     contador <- contador + 1
   FimEnquanto
-  
+
   Escreval("Acabei de contar! A soma de todos os valores é igual a", soma)
   Escreval("O maior valor digitado foi", maior, ", e o menor valor digitado foi", menor)
-fimalgoritmo
+  fimalgoritmo
 ```
 
 **6) Conversão em dólar**
