@@ -290,12 +290,12 @@ inicio
   
   contador <- 0
   
-  Enquanto(contador <= num_alunos)
+  Enquanto (contador <= num_alunas) faca 
     Escreval("-----------------")
     Escreval("ALUNA", contador)
     Escreval("Nome do Aluna:")
     Leia(nome)
-    Escreval("Nota de", nome)
+    Escreval("Nota de ", nome)
     Leia(nota)
   FimEnquanto  
   
